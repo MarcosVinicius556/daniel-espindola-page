@@ -1,0 +1,12 @@
+.personalizedSeal {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personalizedSeal img {
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  filter: brightness(1.2);
+}
