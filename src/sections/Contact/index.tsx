@@ -1,42 +1,111 @@
+"use client";
+
 import { GoArrowUpRight } from "react-icons/go";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
+import { useRef, useState } from "react";
 
 export default function ContactSection() {
+
+  const [executionStatus, setExecutionStatus] = useState("");
+
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const name = useRef<any>(null);
+  const email = useRef<any>(null);
+  const tel = useRef<any>(null);
+  const message = useRef<any>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
+    console.log(executeRecaptcha);
+    if (!executeRecaptcha) return console.log("reCAPTCHA não carregado ainda");
+
+    try {
+      const token = await executeRecaptcha("contact_form");
+
+      const recaptchaResponse = await fetch("/api/verify-recaptcha", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ token }),
+      });
+      
+      const recaptchaData = await recaptchaResponse.json();
+
+      if(!recaptchaData.success) {
+        setExecutionStatus("❌ Falha na verificação do ReCaptcha. Por favor tente novamente.");
+      }
+    } catch(error) {
+      console.error("Erro ao executar o reCAPTCHA:", error);
+      setExecutionStatus("❌ Erro ao executar o reCAPTCHA. Por favor tente novamente.");
+      return;
+    }
+    
+    try {
+      let formData = {
+        name: name?.current?.value,
+        email: email?.current?.value,
+        tel: tel?.current?.value,
+        message: message?.current?.value
+      };
+
+      console.log(formData);
+      const emailResponse = await fetch("/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formData }),
+      });
+
+      const emailData = await emailResponse.json();
+
+      if (emailData.success) {
+        setExecutionStatus("✅ E-mail enviado com sucesso!");
+      } else {
+        setExecutionStatus("❌ Falha no envio do e-mail. Tente novamente.");
+      }
+    } catch (error) {
+      console.error("Erro ao enviar o e-mail:", error);
+      setExecutionStatus("❌ Erro ao enviar o e-mail. Tente novamente.");
+    }
+  };
+
   return (
     <section id="contact" className="bg-white w-full text-black py-12 sm:py-16 px-4 sm:px-6 md:px-20">
       <div className="max-w-[1440px] mx-auto pt-6 sm:pt-9">
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
 
-          <form className="flex flex-col gap-4">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <h2 className="text-4xl md:text-5xl mb-4 font-bold tracking-wide">Entre em Contato</h2>
 
             <div className="mb-5">
               <label htmlFor="nome" className="block mb-2 text-sm font-medium text-black">Nome</label>
-              <input name="nome" type="text" className="bg-white p-2 text-base w-full border-b focus:outline-none" required />
+              <input ref={name} name="nome" type="text" className="bg-white p-2 text-base w-full border-b focus:outline-none" required />
             </div>
 
             <div className="mb-5">
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-black">E-mail</label>
-              <input name="email" type="email" className="bg-white p-2 text-base w-full border-b focus:outline-none" required />
+              <input ref={email} name="email" type="email" className="bg-white p-2 text-base w-full border-b focus:outline-none" required />
             </div>
 
             <div className="mb-5">
               <label htmlFor="telefone" className="block mb-2 text-sm font-medium text-black">Telefone</label>
-              <input name="telefone" type="tel" className="bg-white p-2 text-base w-full border-b focus:outline-none"/>
+              <input ref={tel} name="telefone" type="tel" className="bg-white p-2 text-base w-full border-b focus:outline-none"/>
             </div>
 
             <div className="mb-5">
               <label htmlFor="mensagem" className="block mb-2 text-sm font-medium text-black">Mensagem</label>
-              <textarea name="mensagem" className="bg-white min-h-[150px] sm:min-h-[180px] md:min-h-[200px] p-2 text-base w-full border focus:outline-none"/>
+              <textarea ref={message} name="mensagem" className="bg-white min-h-[150px] sm:min-h-[180px] md:min-h-[200px] p-2 text-base w-full border focus:outline-none"/>
             </div>
 
             <p className="text-gray-700 mb-6 text-sm max-w-full md:max-w-[450px]">
               Este site é protegido por reCAPTCHA e a <a href="https://policies.google.com/privacy" className="underline">Política de Privacidade do Google</a> e <a href="https://policies.google.com/terms" className="underline">Termos de Serviço</a> do Google são aplicáveis.
             </p>
 
-            <button className="bg-black border border-black text-white w-[120px] sm:w-[120px] cursor-pointer py-3 rounded hover:bg-white hover:text-black transition">
+            <button type="submit" className="bg-black border border-black text-white w-[120px] sm:w-[120px] cursor-pointer py-3 rounded hover:bg-white hover:text-black transition">
               Enviar
             </button>
+            {executionStatus && <p>{executionStatus}</p>}
           </form>
 
           <div className="flex flex-col items-start sm:items-start">

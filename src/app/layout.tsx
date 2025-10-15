@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import ReCaptchaProviderClient from "@/components/ReCaptchaProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -122,7 +123,10 @@ export default function RootLayout({
             }),
           }}
         />
-        {children}
+        <ReCaptchaProviderClient>
+          {children}
+        </ReCaptchaProviderClient>
+        
         <SpeedInsights />
       </body>
     </html>
