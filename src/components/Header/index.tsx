@@ -27,7 +27,7 @@ export default function Header() {
           </a>
         </div>
 
-        <img loading="lazy" src="/images/logo/svg/horzt branco.svg" alt="Logo de Daniel Espindola" className="h-8 md:h-10" />
+        <img fetchPriority="high" src="/images/logo/svg/horzt branco.svg" alt="Logo de Daniel Espindola" className="h-8 md:h-10" />
 
         <div className="relative">
           <button
