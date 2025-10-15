@@ -1,16 +1,4 @@
-import { fetchProperties } from "./services/DWVPropertyService";
-import { Property } from "../api/dwv-integration/dtos/PropertyDTO";
-import { GoArrowUpRight } from "react-icons/go";
-
-export const revalidate = 60;
-
-export default async function HomePage({
-  searchParams,
-}: {
-  searchParams?: { search?: string };
-}) {
-  const search = searchParams?.search || "";
-  const properties: Property[] = await fetchProperties({ search, limit: 12 });
+export default async function HomePage() {
 
   return (
     <section className="min-h-screen bg-dark py-12 px-6">
