@@ -40,7 +40,7 @@ export default function Hero() {
             Ver Imóveis <GoArrowUpRight className="ml-1 text-[20px]" />
           </a>
           <a
-            href="https://api.whatsapp.com/send?phone=5548996106477?text=Ol%C3%A1,%20gost%C3%A1ria%20de%20conversar%20sobre%20um%20im%C3%B3vel%20que%20vi%20em%20seu%20site!"
+            href="https://api.whatsapp.com/send&phone=5548996106477?text=Ol%C3%A1,%20gost%C3%A1ria%20de%20conversar%20sobre%20um%20im%C3%B3vel%20que%20vi%20em%20seu%20site!"
             className="bg-white border border-white text-black px-6 py-3 rounded-sm text-sm font-bold hover:bg-transparent hover:text-white transition"
             target="_blank"
           >
