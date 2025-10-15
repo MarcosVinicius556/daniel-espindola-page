@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "@vercel/speed-insights": "^1.2.0",
     "framer-motion": "^12.23.24",
     "next": "15.5.4",
     "nodemailer": "^7.0.9",
