@@ -29,7 +29,7 @@ export default function Hero() {
 
         <div className={`flex flex-col items-center text-center select-none`}>
 
-          <img src="/images/logo/svg/horzt branco.svg" alt="Moradias de Luxo" className="object-cover w-full h-full md:w-[500px]" />
+          <img fetchPriority="high" src="/images/logo/svg/horzt branco.svg" alt="Moradias de Luxo" className="object-cover w-full h-full md:w-[500px]" />
       </div>
 
         <div className="flex justify-center gap-4 pt-4">

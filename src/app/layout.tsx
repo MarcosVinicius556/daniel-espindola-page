@@ -1,19 +1,10 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "../styles/globals.css";
+import localFont from "next/font/local";
 import Script from "next/script";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import ReCaptchaProviderClient from "@/components/ReCaptchaProvider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
   title: "Daniel Espíndola | Imóveis de Alto Padrão em Itapema - SC",
@@ -86,7 +77,7 @@ export default function RootLayout({
           content="tbd"
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+      <body className={`antialiased`}>
         <Script
           id="ld-json"
           type="application/ld+json"
