@@ -4,28 +4,28 @@ import { NextResponse } from 'next/server';
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.EMAIL_TO,
-    pass: process.env.GMAIL_APP_PASSWORD!,
+    user: process.env.NEXT_PUBLIC_EMAIL_TO,
+    pass: process.env.NEXT_PUBLIC_GMAIL_APP_PASSWORD!,
   },
 });
 
 export async function POST(req: Request) {
   try {
-    const { name, email, message, objective, phone } = await req.json();
+    const { name, email, message, tel } = await req.json();
 
     if (!name || !email || !message) {
       return NextResponse.json({ error: 'Todos os campos são obrigatórios' }, { status: 400 });
     }
 
     const mailOptions = {
-      from: '"Site" <danielespindola@gmail.com>', 
-      to: process.env.EMAIL_TO,
+      from: '"Site" <contato@danielespindola.com>', 
+      to: process.env.NEXT_PUBLIC_EMAIL_TO,
       subject: `Nova mensagem de ${name}`,
       html: `
         <h2>Olá Daniel Espindola, um cliente está tentando entrar em contato através de seu site!</h2>
         <p><strong>Nome:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
-        <h3>Telefone: ${phone}</h3>
+        <h3>Telefone: ${tel}</h3>
         <p><strong>Mensagem:</strong> ${message}</p>
       `,
     };
