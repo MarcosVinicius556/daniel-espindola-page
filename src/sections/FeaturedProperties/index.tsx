@@ -36,6 +36,7 @@ export default function FeaturedProperties() {
               <img
                 src={item.image}
                 alt={item.title}
+                loading="lazy"
                 className="h-full w-full object-cover filter brightness-50 group-hover:scale-105 transition duration-500 ease-in-out"
               />
               <div className="absolute inset-0 bg-black/40" />

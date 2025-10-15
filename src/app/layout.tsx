@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     siteName: "Daniel Espíndola Imóveis",
     images: [
       {
-        url: "https://www.danielespindola.com.br/images/profile/daniel_espindola.png",
+        url: "https://www.danielespindola.com.br/images/logo/horzt branco@2x.png",
         width: 1200,
         height: 630,
         alt: "Imóveis de alto padrão Daniel Espíndola",
@@ -52,11 +52,12 @@ export const metadata: Metadata = {
       "Coberturas, casas e apartamentos exclusivos em Itapema. Atendimento personalizado e imóveis de luxo com segurança e curadoria.",
     site: "@DanielEspindola",
     creator: "@DanielEspindola",
-    images: ["https://www.danielespindola.com.br/og-image.jpg"],
+    images: ["https://www.danielespindola.com.br/images/logo/horzt branco@2x.png"],
   },
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     "max-video-preview": -1,
     "max-image-preview": "large",
     "max-snippet": -1,

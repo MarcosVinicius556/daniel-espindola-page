@@ -10,7 +10,7 @@ export default function Footer() {
       <div className="max-w-[1440px] grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 sm:gap-14 md:gap-20">
 
         <div className="flex flex-col items-center sm:items-start">
-          <img src="/images/logo/svg/horzt branco.svg" alt="Logo de Daniel Espindola" className="w-48 sm:w-56 md:w-70 p-0 mb-4 sm:mb-6"/>
+          <img loading="lazy" src="/images/logo/svg/horzt branco.svg" alt="Logo de Daniel Espindola" className="w-48 sm:w-56 md:w-70 p-0 mb-4 sm:mb-6"/>
 
           <a href="/imoveis" className="w-full flex flex-row align-center justify-center bg-white border border-white text-black px-6 py-3 rounded-sm text-sm font-bold hover:bg-transparent hover:text-white transition">
             Conhecer os imóveis <GoArrowUpRight className="ml-1 text-[20px]" />
@@ -60,9 +60,8 @@ export default function Footer() {
 
       </div>
 
-      <p className="text-center text-sm text-gray-600 mt-10">
-        © {new Date().getFullYear()} Daniel Espíndola. Todos os direitos reservados. <br />
-        Desenvolvido por Marcos Vinicius Angeli Costa.
+      <p className="text-center mx-auto text-gray-200 py-10 px-4 sm:px-6 md:px-20 border-t border-gray-800 text-sm mt-10">
+        © {new Date().getFullYear()} Desenvolvido por Marcos Vinicius Angeli Costa.
       </p>
     </footer>
   );
