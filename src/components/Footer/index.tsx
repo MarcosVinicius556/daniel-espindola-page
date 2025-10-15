@@ -60,7 +60,7 @@ export default function Footer() {
 
       </div>
 
-      <p className="text-center mx-auto text-gray-200 py-10 px-4 sm:px-6 md:px-20 border-t border-gray-800 text-sm mt-10">
+      <p className="text-center mx-auto text-gray-200 py-10 px-4 sm:px-6 md:px-20 border-t border-[#292929] text-sm mt-10">
         © {new Date().getFullYear()} Desenvolvido por Marcos Vinicius Angeli Costa.
       </p>
     </footer>
