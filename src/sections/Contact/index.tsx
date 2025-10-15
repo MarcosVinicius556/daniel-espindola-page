@@ -12,22 +12,22 @@ export default function ContactSection() {
 
             <div className="mb-5">
               <label htmlFor="nome" className="block mb-2 text-sm font-medium text-black">Nome</label>
-              <input type="text" className="bg-white p-2 text-base w-full border-b focus:outline-none" required />
+              <input name="nome" type="text" className="bg-white p-2 text-base w-full border-b focus:outline-none" required />
             </div>
 
             <div className="mb-5">
               <label htmlFor="email" className="block mb-2 text-sm font-medium text-black">E-mail</label>
-              <input type="email" className="bg-white p-2 text-base w-full border-b focus:outline-none" required />
+              <input name="email" type="email" className="bg-white p-2 text-base w-full border-b focus:outline-none" required />
             </div>
 
             <div className="mb-5">
               <label htmlFor="telefone" className="block mb-2 text-sm font-medium text-black">Telefone</label>
-              <input type="tel" className="bg-white p-2 text-base w-full border-b focus:outline-none"/>
+              <input name="telefone" type="tel" className="bg-white p-2 text-base w-full border-b focus:outline-none"/>
             </div>
 
             <div className="mb-5">
               <label htmlFor="mensagem" className="block mb-2 text-sm font-medium text-black">Mensagem</label>
-              <textarea className="bg-white min-h-[150px] sm:min-h-[180px] md:min-h-[200px] p-2 text-base w-full border focus:outline-none"/>
+              <textarea name="mensagem" className="bg-white min-h-[150px] sm:min-h-[180px] md:min-h-[200px] p-2 text-base w-full border focus:outline-none"/>
             </div>
 
             <p className="text-gray-700 mb-6 text-sm max-w-full md:max-w-[450px]">
@@ -52,6 +52,7 @@ export default function ContactSection() {
 
             <img 
               src="/images/cards/Imagem 03.png" 
+              loading="lazy"
               alt="Foto de apartamento com vista para praia"
               className="w-full sm:w-[400px] md:w-[450px] h-64 sm:h-80 md:h-[400px] object-cover brightness-50 border-b border-white pb-5"
             />
