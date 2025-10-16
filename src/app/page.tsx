@@ -9,7 +9,7 @@ import DanielEspindola from "@/sections/DanielEspindola";
 export default function HomePage() {
   return (
     <>
-      <main className="flex flex-col min-h-screen bg-[#171717] text-white">
+      <main className="flex flex-col min-h-screen bg-[#161616] text-[#EDEDED]">
         <Header />
         <Hero />
         <FeaturedProperties />
