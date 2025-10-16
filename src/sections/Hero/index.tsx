@@ -5,7 +5,7 @@ import { GoArrowUpRight } from "react-icons/go";
 
 export default function Hero() {
   return (
-    <section id="hero" className="relative h-screen flex align-center items-center justify-center overflow-hidden bg-[#171717] text-white">
+    <section id="hero" className="relative h-screen flex align-center items-center justify-center overflow-hidden bg-[#161616] text-[#EDEDED]">
 
       <div className="absolute w-full h-screen overflow-hidden">
         <div className="absolute inset-0 brightness-60">
@@ -28,20 +28,23 @@ export default function Hero() {
       >
 
         <div className={`flex flex-col items-center text-center select-none`}>
-
-          <img fetchPriority="high" src="/images/logo/svg/horzt branco.svg" alt="Moradias de Luxo" className="object-cover w-full h-full md:w-[500px]" />
-      </div>
+          <img 
+            fetchPriority="high" 
+            src="/images/logo/svg/horzt branco.svg" 
+            alt="Moradias de Luxo" 
+            className="object-cover w-full h-full md:w-[448px]" />
+        </div>
 
         <div className="flex justify-center gap-4 pt-4">
           <a
             href="/imoveis"
-            className="flex flex-row align-center justify-center bg-white border border-white text-black px-6 py-3 rounded-sm text-sm font-bold hover:bg-transparent hover:text-white transition"
+            className="max-h-[50px] flex flex-row align-center justify-center bg-white border border-white text-black px-6 py-3 rounded-sm text-sm font-bold hover:bg-transparent hover:text-[#EDEDED] transition"
           >
-            Ver Imóveis <GoArrowUpRight className="ml-1 text-[20px]" />
+            Ver Imóveis <GoArrowUpRight className="ml-1 size-[20px] md:size-[25px]" />
           </a>
           <a
             href="https://api.whatsapp.com/send?phone=5548996106477&text=Ol%C3%A1,%20gost%C3%A1ria%20de%20conversar%20sobre%20um%20im%C3%B3vel%20que%20vi%20em%20seu%20site!"
-            className="bg-white border border-white text-black px-6 py-3 rounded-sm text-sm font-bold hover:bg-transparent hover:text-white transition"
+            className="max-h-[50px] bg-white border border-white text-black justify-center px-3 md:px-6 py-3 rounded-sm font-bold hover:bg-transparent hover:text-[#EDEDED] transition"
             target="_blank"
           >
             Entrar em contato

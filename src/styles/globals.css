@@ -5,15 +5,15 @@ html {
 }
 
 :root {
-  --background: #171717;
+  --background: #161616;
   --foreground: #ffffff;
+  --font-lato: "Lato", sans-serif;
+  --font-roboto: "Roboto Flex", sans-serif;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -26,6 +26,28 @@ html {
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: "Roboto Flex", sans-serif;
+  font-family: var(--font-lato);
   font-optical-sizing: auto;
+}
+
+a {
+  font-size: 18px;
+}
+
+button {
+  font-family: var(--font-roboto);
+}
+
+@media screen and (max-width: 768px) {
+  a {
+    font-size: 15px;
+  }
+}
+
+.text-style-light {
+  color: #363636 !important;
+}
+
+.text-style-regular {
+  color: #161616 !important;
 }
