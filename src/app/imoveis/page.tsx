@@ -13,7 +13,7 @@ export default async function HomePage() {
         <div className="flex justify-center gap-4 pt-4">
           <a
             href="/"
-            className="bg-white border border-white text-black px-6 py-3 rounded-sm text-sm font-bold hover:bg-transparent hover:text-white transition"
+            className="bg-white border border-white text-black px-6 py-3 rounded-sm text-sm font-bold hover:bg-transparent hover:text-[#EDEDED] transition"
           >
             Retornar
           </a>
