@@ -45,6 +45,7 @@ export default function Footer() {
             <li><a href="#team">Equipe</a></li>
             <li><a href="#daniel-espindola">Daniel Espindola</a></li>
             <li><a href="#contact">Contato</a></li>
+            <li><a href="#feedbacks">Referências</a></li>
             <li><a href="/imoveis">Imóveis</a></li>
           </ul>
         </div>

@@ -9,14 +9,14 @@ export default function Hero() {
 
       <div className="absolute w-full h-screen overflow-hidden">
         <div className="absolute inset-0 brightness-60">
-          <Image
-            src="/images/cards/Imagem 04.png"
-            alt="Moradias de Luxo"
-            fill
-            priority
-            className="object-cover object-center md:object-[50%_50%]"
-            sizes="(max-width: 768px) 100vw, 100vw"
-          />
+          <video
+          src="/images/video_background.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center brightness-60"
+        />
         </div>
       </div>
 

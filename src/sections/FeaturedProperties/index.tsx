@@ -6,7 +6,7 @@ const highlights = [
     image: "/images/cards/Imagem 03.png",
   },
   {
-    title: "Casas",
+    title: "Frente Mar",
     image: "/images/cards/Imagem 02.png",
   },
   {

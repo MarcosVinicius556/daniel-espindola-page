@@ -7,7 +7,7 @@ export default function Team() {
         
         <div className="w-full md:w-1/2">
           <img
-            src="/images/profile/team.png"
+            src="/images/profile/team.jpg"
             alt="Nossa equipe"
             className="w-full h-64 sm:h-80 md:h-[654px] object-cover"
           />
