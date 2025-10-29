@@ -49,6 +49,7 @@ export default function Header() {
                 { href: "#team", label: "Equipe" },
                 { href: "#daniel-espindola", label: "Daniel Espindola" },
                 { href: "#contact", label: "Contato" },
+                { href: "#feedbacks", label: "Referências" },
                 { href: "/imoveis", label: "Imóveis" },
               ].map((item) => (
                 <li key={item.href}>
