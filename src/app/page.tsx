@@ -5,6 +5,7 @@ import Contact from "@/sections/Contact";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import DanielEspindola from "@/sections/DanielEspindola";
+import FeedbackSection from "@/sections/CustomersFeedback";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
         <FeaturedProperties />
         <Team />
         <DanielEspindola />
+        <FeedbackSection />
         <Contact />
         <Footer />
       </main>
